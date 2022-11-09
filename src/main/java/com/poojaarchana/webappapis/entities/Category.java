@@ -28,4 +28,7 @@ public class Category {
   @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Post> posts = new ArrayList<>();
 
+  @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  private List<Story> stories = new ArrayList<>();
+
 }
