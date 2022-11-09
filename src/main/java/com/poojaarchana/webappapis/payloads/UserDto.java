@@ -1,5 +1,7 @@
 package com.poojaarchana.webappapis.payloads;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.validation.constraints.*;
@@ -30,4 +32,14 @@ public class UserDto {
   private Long contact;
 
   private Set<RoleDto> roles = new HashSet<>();
+
+  @JsonIgnore
+  public String getPassword() {
+    return this.password;
+  }
+
+  @JsonProperty
+  public void setPassword(String password){
+    this.password=password;
+  }
 }
