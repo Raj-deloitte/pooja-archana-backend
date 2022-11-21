@@ -15,14 +15,13 @@ public class Episode {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  long id;
+    private Long id;
 
-
+    @Column(name = "epnumber")
     private String ep_number;
 
-    @Column
+    @Column(name = "content")
     private String content;
-
 
     @ManyToOne
     private Story story;
