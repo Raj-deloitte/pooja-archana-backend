@@ -1,15 +1,12 @@
 package com.poojaarchana.webappapis.payloads;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.poojaarchana.webappapis.entities.Episode;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,6 +16,15 @@ public class StoryDto {
     private long id;
 
     @Size(min = 4 , message = "Minimum size of title should be 4 characters")
-    private String Title;
+    private String title;
 
+    private String description;
+
+    private Long views;
+
+    private Date date;
+
+    private CategoryDto category;
+
+//  private List<Episode> episodes = new ArrayList<>();
 }

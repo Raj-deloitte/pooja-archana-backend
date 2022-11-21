@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/episode")
 public class EpisodeController {
-
     @Autowired
     private EpisodeService episodeService;
 
@@ -24,11 +23,9 @@ public class EpisodeController {
         return  ResponseEntity.ok(this.episodeService.getAllEpisode());
     }
 
-
     @GetMapping("/story/{storyId}")
-        public ResponseEntity<List<EpisodeDto>> getEpisodeByStory(@PathVariable Long storyId){
-        List<EpisodeDto> episodeDtos=this.episodeService.getEpisodeByStory(storyId);
+    public ResponseEntity<List<EpisodeDto>> getEpisodeByStory(@PathVariable Long storyId){
+        List<EpisodeDto> episodeDtos = this.episodeService.getEpisodeByStory(storyId);
         return new ResponseEntity<List<EpisodeDto>>(episodeDtos, HttpStatus.OK);
     }
-
 }
